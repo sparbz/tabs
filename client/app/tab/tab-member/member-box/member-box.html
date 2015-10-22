@@ -1,0 +1,20 @@
+<div>
+	<div class="col-sm-6 col-md-3" ng-controller="MemberBoxCtrl">
+		<div class="member-box-small ">
+				<div ng-hide="editorEnabled">
+					<a><h3>{{ currentMember.name }}</h3></a>
+				</div>
+				<div ng-show="editorEnabled">
+					<h3><input ng-submit="toggleEditor()" ng-model="editableName"></input></h3>
+				</div>
+				<a ng-href="/tab/{{currentTab.shortID}}/member/{{currentMember.userID}}">
+					<span class="glyphicon glyphicon-list box-icon"></span>
+				</a>
+				<a ng-href="#" ng-click="toggleEditor()">
+					<span class="glyphicon glyphicon-cog box-icon"></span>
+				<!-- {{ currentTab.members }} -->
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

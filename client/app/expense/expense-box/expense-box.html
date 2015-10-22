@@ -1,0 +1,23 @@
+
+	<div ng-controller="ExpenseBoxCtrl" >
+			<div><a ng-click="toggleExpenseDetails()" >{{ exp.name }}</a></div>
+		<div class="expense-box" ng-show="showExpenseDetails">
+			<div>Total: {{ sum | currency }} | Items: {{exp.expenseItems.length}}
+				<a ng-click="toggleNewExpenseItem()" ng-hide="showNewExpenseItem">[+]</a>
+				<a ng-click="toggleNewExpenseItem()" ng-show="showNewExpenseItem">[-]</a>
+				<span ng-repeat="member in members"> | {{ member.name }}: {{memberSums[member.userID] | currency}}</span> 
+			</div>
+			<new-expense-item ng-show="showNewExpenseItem" exp="exp" members="members"></new-expense-item>
+			<table class="table table-condensed">
+				<tr class="box-table">
+					<th>Price</th><th>Item Name</th><th>Paid By:</th><th>Delete?</th>
+				</tr>
+				<tr ng-repeat="item in exp.expenseItems" class="box-table">
+					<td>{{item.price | currency}}</td>
+					<td>{{item.name}}</td>
+					<td>{{members[item.paidByID-1].name}}</td>
+					<td><a href="#" ng-click="removeExpenseItem($index)">[X]</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>

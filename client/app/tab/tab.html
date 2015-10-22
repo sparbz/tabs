@@ -1,0 +1,17 @@
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	<div class="tab-container container">
+		<h3 ng-model="user.name">{{ user.name }}'s Tabs<br>viewSwitcher: {{ viewSwitcher }}</h3>
+		<div class="tab-nav">
+			<a href-"#" ng-click="view('new')">NEW TAB</a> | <a href="#" ng-click="view('show')">SHOW TABS</a>
+		</div>
+		<div ng-switch on="viewSwitcher">
+			<new-tab ng-switch-when="new"></new-tab>
+			<show-tabs ng-switch-when="show"></show-tabs>
+			<view-tab ng-switch-when="view"></view-tab>
+		</div>
+		
+		<div ui-view></div>
+	</div>
+</div>
+<div class="col-md-1"></div>

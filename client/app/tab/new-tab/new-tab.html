@@ -1,0 +1,8 @@
+<div class="form-inline" ng-controller="NewTabCtrl" class="new-tab-box">
+	<form novalidate>
+    <div class="form-control">Name: <input type="text" ng-model="newTab.name" /></div>
+    <div class="form-control">Info: <input type="text" ng-model="newTab.info" /></div>
+    <div class="form-control">Members: <input type="text" ng-model="numMembers" /></div> {{ numMembers }}
+    <input type="submit" ng-click="createTab()" value="Save" class="btn btn-default" />
+  </form>
+</div>

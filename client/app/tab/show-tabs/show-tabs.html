@@ -1,0 +1,6 @@
+<div ng-controller="ShowTabsCtrl">
+	<div class="tab-box" ng-repeat="tab in tabs">
+		<!-- <tab ng-click="selectTab(tab._id)"></tab> -->
+		<a ng-href="tab/{{tab.shortID}}"><tab></tab></a>
+	</div>
+</div>

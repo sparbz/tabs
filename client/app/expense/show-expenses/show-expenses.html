@@ -1,0 +1,17 @@
+<div class="expense-box">
+	<table class="table table-striped expense-table">
+		<tr>
+			<th>Date</th><th>Expense</th><th>Items</th><th>Total</th>
+		</tr>
+		<tr ng-repeat="expense in expenses">
+			<td>Today</td>
+			<td ng-model="expense.name">{{ expense.name }} <a href="#" ng-click="deleteExpense(expense)">[X]</a></td>
+			<td>0 <a href="#" ng-click="toggleExpenseItems()">[+]</a></td>
+			<td>{{ 0 | currency }}</td>
+		</tr>
+		<tr>
+			<td colspan="4"><show-expense-items ng-show="showExpenseItems" expense-id="expense._id"></show-expense-items></td>
+		</tr> 
+	</table>
+	<new-expense tab-id="tabID" ng-show="showNewExpenseView"></new-expense>
+</div>

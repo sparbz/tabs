@@ -1,0 +1,11 @@
+<div ng-controller="NewExpenseItemCtrl">
+	<form class="form-inline new-expense-liner" novalidate>
+		<div class="form-group">
+		<input class="form-control form-money" ng-currency ng-model="newExpenseItem.price"></input>
+		<input class="form-control form-expense" ng-model="newExpenseItem.name" placeholder="Item Name"></input>
+		 <select ng-model="newExpenseItem.paidByID" class="form-control form-expense" ng-options="member.userID as member.name for member in members">
+	 	</select>
+	 	<input type="submit" ng-click="addNewExpense()" class="btn btn-info" value="+">
+		</div>
+	</form>
+</div>
